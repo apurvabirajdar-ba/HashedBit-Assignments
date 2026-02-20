@@ -1,0 +1,151 @@
+// =======================
+// Q1 - Remove states starting with vowels
+// =======================
+
+let states = ["Andhra Pradesh", "Bihar", "Odisha", "Uttar Pradesh", "Maharashtra", "Assam"];
+
+let filteredStates = states.filter(state => {
+    return !["A", "E", "I", "O", "U"].includes(state[0].toUpperCase());
+});
+
+console.log("Q1:", filteredStates);
+
+
+// =======================
+// Q2 - Reverse words in sentence
+// =======================
+
+let str = "I love my India";
+let reversedSentence = str.split(" ").reverse().join(" ");
+console.log("Q2:", reversedSentence);
+
+
+// =======================
+// Q3 - INDIA → INDONESIA using splice
+// =======================
+
+let string = "INDIA".split("");
+string.splice(3, 0, "O", "N", "E", "S");
+console.log("Q3:", string.join(""));
+
+
+// =======================
+// Q4 - Count vowels and consonants
+// =======================
+
+let text = "JavaScript is very powerful language";
+let vowels = 0;
+let consonants = 0;
+
+for (let char of text.toLowerCase()) {
+    if (/[a-z]/.test(char)) {
+        if ("aeiou".includes(char)) {
+            vowels++;
+        } else {
+            consonants++;
+        }
+    }
+}
+
+console.log("Q4: Vowels =", vowels, "Consonants =", consonants);
+
+
+// =======================
+// Q5 - Replace wrong word
+// =======================
+
+function correctfn(string, wrong, correct) {
+    return string.replace(wrong, correct);
+}
+
+console.log("Q5:", correctfn("I have a blck pen", "blck", "black"));
+
+
+// =======================
+// Q6 - Filter numbers > 5
+// =======================
+
+let inputArr = [1,2,3,9,10,7,5,4,3];
+
+let answer = inputArr.filter(num => num > 5);
+console.log("Q6:", answer);
+
+
+// =======================
+// Q7 - Students average using map & reduce
+// =======================
+
+const students = [
+{ name: "Ram", scores: [80, 70, 60] },
+{ name: "Mohan", scores: [80, 70, 90] },
+{ name: "Sai", scores: [60, 70, 80] },
+{ name: "Hemang", scores: [90, 90, 80, 80] },
+];
+
+let averages = students.map(student => {
+    let total = student.scores.reduce((sum, score) => sum + score, 0);
+    let avg = total / student.scores.length;
+    return { name: student.name, average: avg };
+});
+
+console.log("Q7:", averages);
+
+
+// =======================
+// Q8 - Repeated sum of digits
+// =======================
+
+function singleDigitSum(num) {
+    while (num > 9) {
+        num = num.toString().split("")
+            .reduce((sum, digit) => sum + parseInt(digit), 0);
+    }
+    return num;
+}
+
+console.log("Q8:", singleDigitSum(456));
+
+
+// =======================
+// Q9 - Count words in paragraph
+// =======================
+
+function countWords(paragraph) {
+    return paragraph.trim().split(/\s+/).length;
+}
+
+console.log("Q9:", countWords("JavaScript is very easy to learn and practice"));
+
+
+// =======================
+// Q10 - Reverse a string
+// =======================
+
+function reverseString(str) {
+    return str.split("").reverse().join("");
+}
+
+console.log("Q10:", reverseString("Hello"));
+
+
+// =======================
+// Q11 - Calculate average marks for each student
+// =======================
+
+let input = {
+    student1: { subject1: 44, subject2: 56, subject3: 87, subject4: 97, subject5: 37 },
+    student2: { subject1: 44, subject2: 56, subject3: 87, subject4: 97, subject5: 37 },
+    student3: { subject1: 44, subject2: 56, subject3: 87, subject4: 97, subject5: 37 }
+};
+
+let output = {};
+
+for (let student in input) {
+    let marks = Object.values(input[student]);
+    let total = marks.reduce((sum, mark) => sum + mark, 0);
+    let avg = total / marks.length;
+
+    output[student] = { average: avg };
+}
+
+console.log("Q11:", output);

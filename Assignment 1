@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Webpage Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+        }
+
+        /* HEADER */
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .social-links a {
+            color: white;
+            margin-left: 15px;
+            text-decoration: none;
+        }
+
+        /* MENUBAR */
+        .menubar {
+            background-color: #34495e;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .menubar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-weight: bold;
+        }
+
+        .menubar a:hover {
+            color: yellow;
+        }
+
+        /* LAYOUT */
+        .container {
+            display: flex;
+            padding: 20px;
+        }
+
+        /* SIDEBAR */
+        .sidebar {
+            width: 25%;
+            background-color: #ecf0f1;
+            padding: 15px;
+        }
+
+        .sidebar h3 {
+            margin-bottom: 10px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+        }
+
+        .sidebar ul li {
+            padding: 8px 0;
+        }
+
+        /* MAIN CONTENT */
+        .content {
+            width: 75%;
+            padding-left: 20px;
+        }
+
+        .box-container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .box {
+            background-color: white;
+            padding: 15px;
+            width: 33%;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .box img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .box h4 {
+            margin: 10px 0;
+        }
+
+        /* FOOTER */
+        .footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <div class="logo">MyLogo</div>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </div>
+
+    <!-- MENUBAR -->
+    <div class="menubar">
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </div>
+
+    <!-- MAIN SECTION -->
+    <div class="container">
+        
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <h3>Custom Data</h3>
+            <ul>
+                <li>Latest News</li>
+                <li>Upcoming Events</li>
+                <li>Quick Links</li>
+                <li>Announcements</li>
+            </ul>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content">
+            <div class="box-container">
+                
+                <div class="box">
+                    <h4>Title One</h4>
+                    <img src="https://via.placeholder.com/300x150" alt="Image">
+                    <p>This is sample description for box one.</p>
+                </div>
+
+                <div class="box">
+                    <h4>Title Two</h4>
+                    <img src="https://via.placeholder.com/300x150" alt="Image">
+                    <p>This is sample description for box two.</p>
+                </div>
+
+                <div class="box">
+                    <h4>Title Three</h4>
+                    <img src="https://via.placeholder.com/300x150" alt="Image">
+                    <p>This is sample description for box three.</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        © 2026 MyWebsite | All Rights Reserved
+    </div>
+
+</body>
+</html>

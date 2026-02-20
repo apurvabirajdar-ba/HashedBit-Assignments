@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>IPL 2022 Points Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: green;
+            color: white;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+
+<h2>IPL 2022 Points Table</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Position</th>
+            <th>Team</th>
+            <th>Matches</th>
+            <th>Won</th>
+            <th>Lost</th>
+            <th>Points</th>
+            <th>NRR</th>
+        </tr>
+    </thead>
+    <tbody id="tableBody"></tbody>
+</table>
+
+<script>
+
+fetch("https://my-json-server.typicode.com/FreSauce/json-ipl/data")
+    .then(response => response.json())
+    .then(data => {
+
+        // Sort in ascending order based on NRR
+        data.sort((a, b) => parseFloat(a.NRR) - parseFloat(b.NRR));
+
+        const tableBody = document.getElementById("tableBody");
+
+        data.forEach((team, index) => {
+
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+                <td>${index + 1}</td>
+                <td>${team.Team}</td>
+                <td>${team.Matches}</td>
+                <td>${team.Won}</td>
+                <td>${team.Lost}</td>
+                <td>${team.Points}</td>
+                <td>${team.NRR}</td>
+            `;
+
+            tableBody.appendChild(row);
+        });
+
+    })
+    .catch(error => {
+        console.log("Error fetching data:", error);
+    });
+
+</script>
+
+</body>
+</html>
+<Section></Section>
